@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Work Sans';
+}
+#math {
+    width: 100%;
+    height:40vh;
+    object-fit: cover;
+}
+.white-card {
+    display: flex;
+    flex-direction: column;
+    width: 34em;
+    height: fit-content;
+    align-self: center;
+    box-shadow: 0 15px 40px 20px hsla(292, 65%, 51%, 0.205);
+    border-radius: 10px;
+    padding: 36px;
+    z-index: 10;
+    position: relative;
+    bottom: 120px;
+    background-color: white;
+}
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+.FAQ {
+    font-size: 38px;
+    font-weight: 660;
+}
+.rhetorical-question {
+    font-weight: 570;
+    margin-left: 4px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.rhetorical-question::after {
+    content: url(assets/images/icon-plus.svg);
+    margin-left: auto;
+    padding: 6px;
+}
+.rhetorical-question.active::after {
+    content: url(assets/images/icon-minus.svg);
+}
+.rhetorical-question.active + .description .description-body{
+    display: block;
+}
+.description-body {
+    display: none;
+    margin-left: 4px;
+    margin-top: 4px;
+} 
+@media (max-width:700px) {
+    .white-card {
+        width: auto;
+        height: auto;
+        margin: 20px;
+    }
+}
+@media (max-width:500px) {
+   .white-card {
+        position:absolute;
+        top: 100px;
+        margin: 20px;
+   }
+   .attribution {
+    position: absolute;
+    bottom: 10px ;
+   }
+}
